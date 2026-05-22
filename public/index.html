@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I_SJS v1 - Messenger</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Экран регистрации и входа -->
+    <div id="auth-screen" class="container">
+        <div class="auth-box">
+            <h1 class="logo">I_SJS v1</h1>
+            <input type="text" id="username" placeholder="Придумайте логин">
+            <input type="password" id="password" placeholder="Пароль">
+            <div class="auth-buttons">
+                <button onclick="auth('register')">Зарегистрироваться</button>
+                <button onclick="auth('login')" class="btn-secondary">Войти</button>
+            </div>
+            <p id="error-msg" class="error"></p>
+        </div>
+    </div>
+
+    <!-- Основной экран мессенджера (скрыт до логина) -->
+    <div id="main-screen" class="container hidden">
+        <div class="messenger-wrapper">
+            
+            <!-- Боковая панель: Список пользователей -->
+            <aside class="sidebar">
+                <div class="sidebar-header">
+                    <h3>Пользователи</h3>
+                </div>
+                <div id="user-list">
+                    <!-- Сюда будут добавляться пользователи и "Избранное" -->
+                </div>
+            </aside>
+
+            <!-- Окно чата -->
+            <main class="chat-window">
+                <div id="chat-header" class="chat-header">
+                    Выберите, кому написать...
+                </div>
+                <div id="messages-container" class="messages-container">
+                    <!-- Тут будут сообщения -->
+                </div>
+                <div class="input-area">
+                    <input type="text" id="message-input" placeholder="Напишите сообщение...">
+                    <button id="send-btn">➤</button>
+                </div>
+            </main>
+
+        </div>
+    </div>
+
+    <!-- Подключаем Socket.io (библиотека для чата в реальном времени) -->
+    <script src="/socket.io/socket.io.js"></script>
+    <!-- Наш файл с логикой -->
+    <script src="script.js"></script>
+</body>
+</html>
