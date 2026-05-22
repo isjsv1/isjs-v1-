@@ -1,0 +1,176 @@
+/* Общие настройки */
+:root {
+    --main-green: #25d366;
+    --dark-green: #075e54;
+    --light-green: #dcf8c6;
+    --bg-color: #e5ddd5;
+    --white: #ffffff;
+    --gray: #f0f0f0;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-color);
+}
+
+.hidden { display: none !important; }
+
+/* Экран авторизации */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.auth-box {
+    background: var(--white);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    text-align: center;
+    width: 320px;
+}
+
+.logo { color: var(--dark-green); margin-bottom: 20px; }
+
+input {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    background-color: var(--main-green);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+button:hover { background-color: #1ebd5b; }
+
+.btn-secondary {
+    background-color: #34b7f1;
+    margin-top: 8px;
+}
+
+.error { color: red; font-size: 14px; margin-top: 10px; }
+
+/* Основной интерфейс мессенджера */
+.messenger-wrapper {
+    display: flex;
+    width: 90vw;
+    height: 90vh;
+    background: var(--white);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+/* Боковая панель */
+.sidebar {
+    width: 30%;
+    border-right: 1px solid #ddd;
+    background: #f8f9fa;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar-header {
+    background: var(--dark-green);
+    color: white;
+    padding: 15px;
+    text-align: center;
+}
+
+#user-list {
+    flex-grow: 1;
+    overflow-y: auto;
+}
+
+.user-item {
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.user-item:hover { background: #e9edef; }
+
+.user-item.active { background: #dcf8c6; border-left: 5px solid var(--main-green); }
+
+/* Окно чата */
+.chat-window {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    background-image: url('https://user-images.githubusercontent.com/15075759/28719144-86dc0f70-73b1-11e7-911d-60d70fcded21.png'); /* Фон как в WhatsApp */
+}
+
+.chat-header {
+    padding: 15px;
+    background: #ededed;
+    font-weight: bold;
+    border-bottom: 1px solid #ccc;
+}
+
+.messages-container {
+    flex-grow: 1;
+    padding: 20px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Пузырьки сообщений */
+.msg {
+    max-width: 70%;
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    position: relative;
+    word-wrap: break-word;
+}
+
+.my-msg {
+    align-self: flex-end;
+    background: var(--light-green);
+}
+
+.other-msg {
+    align-self: flex-start;
+    background: var(--white);
+}
+
+/* Поле ввода */
+.input-area {
+    padding: 15px;
+    background: #f0f0f0;
+    display: flex;
+    align-items: center;
+}
+
+#message-input {
+    flex-grow: 1;
+    border-radius: 20px;
+    border: none;
+    padding: 10px 15px;
+    outline: none;
+}
+
+#send-btn {
+    width: 50px;
+    margin-left: 10px;
+    border-radius: 50%;
+}
